@@ -3,6 +3,8 @@ package es.iesjandula.reaktor_school_automation_server.utils;
 public class Constants
 {
 	public static final String ELEMENTO_AGREGADO = "Elemento agregado";
+    public static final String ELEMENTO_MODIFICADO = "Elemento modificado correctamente.";
+    public static final String ELEMENTO_ELIMINADO = "Elemento eliminado correctamente.";
 	
 	public static final String ERR_ACTUADOR_CODE = "ACTUADOR_ERROR";
 	public static final String ERR_ACTUADOR_NULO_VACIO = "El nombre del actuador no puede ser nulo ni vacío.";
@@ -25,6 +27,7 @@ public class Constants
     public static final String ERR_SIMPLE_NO_EXISTE = "La orden simple no existe en el sistema.";
     
     public static final String ERR_PROGRAMADA_CODE = "PROGRAMADA_ERROR";
+    public static final String ERR_PROGRAMADA_FECHA_NULA = "Fecha programada nula";
 	public static final String ERR_PROGRAMADA_NULO_VACIO = "El identificador de orden programada no puede ser nulo ni vacío.";
     public static final String ERR_PROGRAMADA_EXISTE = "La orden programada ya existe en el sistema.";
     public static final String ERR_PROGRAMADA_NO_EXISTE = "La orden programada no existe en el sistema.";

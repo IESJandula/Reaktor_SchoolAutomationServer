@@ -1,5 +1,7 @@
 package es.iesjandula.reaktor_school_automation_server.models;
 
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -8,20 +10,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="sensor")
-public class Sensor extends Dispositivo
+@Table(name="orden_programada")
+public class OrdenProgramada extends Orden
 {
-
-    @Column(length = 25, nullable = false)
-    private String valorActual;
-
-    @Column(length = 25, nullable = false)
-    private String tipoMedia;
-
+    @Column(nullable = true)
+    private Date fechaProgramada; 
+    
+    @Column(length = 50, nullable = true)
+    private String repeticion;
 }

@@ -2,9 +2,9 @@ package es.iesjandula.reaktor_school_automation_server.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -19,19 +19,19 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="dispositivo")
-@Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Dispositivo
+@Table(name="accion")
+public class Accion
 {
-	@Id
-    @Column(length = 25)
-	private String nombreDispositivo;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(length = 50)
+    private String resultado;
+    @ManyToOne
+    @JoinColumn(name = "actuador_id")
+    private Actuador actuador;
+    @ManyToOne
+    @JoinColumn(name = "orden_id")
+    private Orden orden;
 
-	@Column(length = 25)
-	private String estado;
-	
-	@ManyToOne
-	@JoinColumn(name = "ubicacion_nombre")
-	private Ubicacion ubicacion;
-	
 }

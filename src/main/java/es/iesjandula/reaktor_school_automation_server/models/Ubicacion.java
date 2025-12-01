@@ -22,7 +22,7 @@ public class Ubicacion
 {
 
 	@Id
-    @Column(length = 25)
+    @Column
 	private String nombreUbicacion;
 
 	@OneToMany(mappedBy = "ubicacion")
