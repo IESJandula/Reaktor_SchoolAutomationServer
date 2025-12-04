@@ -1,7 +1,5 @@
 package es.iesjandula.reaktor_school_automation_server.models;
 
-import java.util.Date;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -10,17 +8,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="sensor")
-public abstract class Sensor extends Dispositivo
+@Table(name = "field")
+public class SensorBooleano extends Sensor
 {
-
-    @Column(nullable = false)
-    private Date ultimaAcualizacion;
+	@Column(nullable = false)
+	private Boolean valorActual;
 
 }

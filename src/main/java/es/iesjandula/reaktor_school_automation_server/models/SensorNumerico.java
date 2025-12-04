@@ -1,6 +1,6 @@
 package es.iesjandula.reaktor_school_automation_server.models;
 
-import java.util.Date;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,17 +10,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="sensor")
-public abstract class Sensor extends Dispositivo
+@Table(name="sensor_numerico")
+public class SensorNumerico extends Sensor
 {
-
-    @Column(nullable = false)
-    private Date ultimaAcualizacion;
-
+	@Column
+	private Double umbralMinimo;
+	@Column
+	private Double umbralMaximo;
+	@Column
+	private Double valorActual;
+	
+	
 }
